@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Convertisseur hors-ligne</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <h1 class="main-title">MIRA<span>CHANGE</span></h1>
+      </div>
+    </header>
+
+    <main>
+      <div class="converter-box">
+        <input
+          type="tel"
+          id="amount"
+          placeholder="Montant"
+          enterkeyhint="done"
+        />
+
+        <div class="currencies">
+          <select id="from-currency">
+            <option value="EUR">EUR - Euro</option>
+            <option value="USD">USD - Dollar US</option>
+            <option value="GBP">GBP - Livre Sterling</option>
+            <option value="JPY">JPY - Yen Japonais</option>
+            <option value="MAD">MAD - Dirham Marocain</option>
+            <option value="CAD">CAD - Dollar Canadien</option>
+            <option value="CHF">CHF - Franc Suisse</option>
+            <option value="DZD">DZD - Dinar Algérien</option>
+          </select>
+
+          <span>vers</span>
+
+          <select id="to-currency">
+            <option value="MAD">MAD - Dirham Marocain</option>
+            <option value="EUR">EUR - Euro</option>
+            <option value="USD">USD - Dollar US</option>
+            <option value="GBP">GBP - Livre Sterling</option>
+            <option value="JPY">JPY - Yen Japonais</option>
+            <option value="CAD">CAD - Dollar Canadien</option>
+            <option value="CHF">CHF - Franc Suisse</option>
+            <option value="DZD">DZD - Dinar Algérien</option>
+          </select>
+        </div>
+
+        <button id="convert-btn">Convertir</button>
+
+        <div id="result-container">
+          <h2>Résultat : <span id="result">0.00</span></h2>
+        </div>
+      </div>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

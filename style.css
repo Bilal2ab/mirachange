@@ -1,0 +1,123 @@
+:root {
+  --safe-top: env(safe-area-inset-top);
+  --safe-bottom: env(safe-area-inset-bottom);
+  --safe-left: env(safe-area-inset-left);
+  --safe-right: env(safe-area-inset-right);
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  background-color: #ffffff;
+  color: #000000;
+
+  overscroll-behavior-y: none;
+
+  padding-top: var(--safe-top);
+  padding-bottom: var(--safe-bottom);
+  padding-left: var(--safe-left);
+  padding-right: var(--safe-right);
+}
+
+header {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 2.5rem 1rem;
+  text-align: center;
+  border-bottom: 4px solid #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.main-title {
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: 0.3rem;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.main-title span {
+  font-weight: 300;
+  color: #cccccc;
+}
+
+@keyframes fadeInTitle {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logo-container {
+  animation: fadeInTitle 0.8s ease-out;
+}
+
+.converter-box {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 500px;
+  margin: 0 auto; /* Centre la boîte sur les grands écrans */
+}
+
+input,
+select,
+button {
+  font-size: 1.2rem;
+  padding: 1rem;
+  border-radius: 4px; /* Bords un peu plus carrés pour le style minimaliste */
+  border: 2px solid #000000; /* Bordures noires épaisses */
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* 6. Règle d'or d'accessibilité mobile : 44x44px minimum */
+button,
+select {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+button {
+  background-color: #000000; /* Bouton noir */
+  color: #ffffff; /* Texte blanc */
+  font-weight: bold;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+
+button:active {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+#result-container {
+  text-align: center;
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 2px dashed #000000; /* Petite bordure autour du résultat */
+}
